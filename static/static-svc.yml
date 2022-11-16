@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    labels:
+        app: static
+    name: static-svc
+    namespace: tests
+spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+    selector:
+        app: static
+    type: ClusterIP
